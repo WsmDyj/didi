@@ -1,0 +1,12 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1b1b1f",
+    "navigationBarTitleText": "滴滴出行",
+    "navigationBarTextStyle":"white"
+  }
+}
