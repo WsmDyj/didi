@@ -1,6 +1,7 @@
 page{
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  background-color: #f4f6f8;
 }
 .container{
   width: 100%;
@@ -14,21 +15,23 @@ page{
   position: fixed;
   top: 0;
   left: 0;
+  position: fixed;
 }
 .nav {
   height:108rpx;
   width: 550rpx;
+  position: fixed;
   box-sizing: border-box;
   overflow: hidden;
   line-height: 108rpx;
   background: #ffffff;
   font-size: 16px;
   white-space: nowrap;
-  position: fixed;
   top: 0;
   left: 100rpx;
   right: 100rpx;
   z-index: 99;
+  margin-bottom: 32rpx;
 }
 .nav-all{
   height:30rpx;
@@ -45,7 +48,7 @@ page{
   height:30rpx;
   width: 30rpx;
   left: 0;
-  margin-top: 15rpx;
+  margin-top: 10rpx;
   background-color: #fff;
   position: absolute;
   transform: scale(.15);
@@ -60,12 +63,82 @@ page{
 .nav-item.active{
   color: #fc975c;
 }
-.tab-box{
-  background: greenyellow;
-  padding-top: 80rpx;
-  height: 100%;
-  box-sizing: border-box;
+.container{
+  position: fixed;
+  width: 686rpx;
+  height: 438rpx;
+  background-color: #fff;
+  margin-top:32rpx;
+  margin-left: 32rpx;
+  top: 140rpx;
+  -moz-box-shadow:1px 1px 6px #f4f6f8;
+  -webkit-box-shadow:1px 1px 6px #f4f6f8;
+  box-shadow:1px 1px 6px #f4f6f8;
 }
-.tab-content{
-  overflow-y: scroll;
+.container .didi-time{
+  position: absolute;
+  width: 100%;
+  height: 92rpx;
+  left: 40rpx;
+  top: 48rpx;
+  font-size: 30rpx;
+  color: rgba(0, 0, 0, .7)
 }
+ .didi-input-str{
+  position: absolute;
+  top: 100rpx;
+  left: 105rpx;
+  border-bottom: 1px solid #f5f5f5;
+  height: 120rpx;
+  width: 100%;
+  line-height: 120rpx;
+}
+.circle-str{
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #3cbca3;
+  left: 40rpx;
+  top: 150rpx;
+}
+.didi-input-end{
+  position: absolute;
+  height: 120rpx;
+  width: 100%;
+  line-height: 120rpx;
+  left: 105rpx;
+}
+
+.circle-end{
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: #fc9153;
+  left: 40rpx;
+  top: 250rpx;
+}
+.container .didi-btn{
+  position: absolute;
+  width: 100%;
+  height: 100rpx;
+  background-color: #4a4c5b;
+  bottom: 0;
+  color: #fff;
+  left: 0;
+}
+.swiper{
+  position: absolute;
+  height: 144rpx;
+  width: 686rpx;
+  top: 625rpx;
+ 
+}
+.swiper image{
+  background-repeat: no-repeat;
+  height: 144rpx;
+  width: 686rpx;
+}
+
+

@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -24,13 +24,42 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": []
+			"list": [
+				{
+					"id": -1,
+					"name": "demo",
+					"pathName": "pages/demo/demo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "map",
+					"pathName": "pages/starting/starting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "destination",
+					"pathName": "pages/destination/destination",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "carts",
+					"pathName": "pages/carts/carts",
+					"query": ""
+				}
+			]
 		}
 	}
 }

@@ -1,0 +1,6 @@
+<view class="main">
+<view class="carts" wx:for="{{navData}}" wx:key="{{item.index}}" >
+    <view class="cart-image"> <image src="{{item.url}}" bindtap="backIndex"  data-id="{{index}}"></image></view>
+   <view class="cart-name">  <text>{{item.name}}</text></view>
+</view>
+</view>
