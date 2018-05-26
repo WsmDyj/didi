@@ -1,0 +1,55 @@
+@import '../../styles/didi-btn.wxss';
+.order{
+    width: 710rpx;
+    border: 1px solid #ededed;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 20rpx;
+   box-sizing: border-box;
+   box-shadow:5rpx 5rpx 10rpx #999999;
+}
+.details{
+    height: 147rpx;
+    display: flex;
+    width: 708rpx;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    justify-content: center;
+}
+.details-titlet{
+    color: #333333;
+    font-size: 40rpx;
+   
+    text-indent:30rpx;
+}
+.checked image{
+    width: 38rpx;
+    height: 38rpx;
+}
+.details-titlef{
+    color: #fca06c;
+    font-size: 35rpx;
+    background-color: #fff;
+}
+.name{
+    color: #666666;
+   font-size: 30rpx;
+}
+.didi-btn{
+    margin-top: 20rpx;
+}
+.moreReasons{
+    text-align: center;
+}
+.moreReasons ::after{
+    border-left: 6px solid transparent;  
+    border-right: 6px solid transparent;  
+    border-top: 6px solid #666666;  
+    content: "";  
+    position: absolute;      
+    width: 0;
+    left: 450rpx;
+    top: 38rpx;
+}

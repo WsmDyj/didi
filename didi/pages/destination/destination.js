@@ -15,7 +15,11 @@ Page({
         {id:7,name:'范家新村',detail:'青山湖区广兰路东'},
         {id:8,name:'范家新村',detail:'青山湖区广兰路东'},
         {id:9,name:'范家新村',detail:'青山湖区广兰路东'},
-        {id:10,name:'范家新村',detail:'青山湖区广兰路东'},             
+        {id:10,name:'范家新村',detail:'青山湖区广兰路东'},
+        {id:11,name:'范家新村',detail:'青山湖区广兰路东'},
+        {id:12,name:'范家新村',detail:'青山湖区广兰路东'}, 
+        {id:13,name:'范家新村',detail:'青山湖区广兰路东'},
+        {id:14,name:'范家新村',detail:'青山湖区广兰路东'},              
     ]
   },
 

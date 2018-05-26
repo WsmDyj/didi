@@ -4,7 +4,9 @@
     "pages/logs/logs",
     "pages/starting/starting",
     "pages/destination/destination",
-    "pages/carts/carts"
+    "pages/carts/carts",
+    "pages/wait/wait",
+    "pages/order/order"
   ],
   "window": {
     "backgroundTextStyle": "light",

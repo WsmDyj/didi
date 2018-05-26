@@ -1,0 +1,12 @@
+.didi-btn{
+   
+    width: 710rpx;
+    height: 100rpx;
+    background-color: #4a4c5b;
+    right: 0;
+    color: #fff;
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+}

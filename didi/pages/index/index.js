@@ -26,7 +26,15 @@ Page({
        const id = options.id
        console.log(id)
     },
-    
+    ToWait(){
+        wx.navigateTo({
+           
+            url:  "/pages/wait/wait",
+        }),
+        wx.setTopBarText({
+            text: '等待应答'
+          })
+    },
     switchNav(event){
         let text = this.data.navData;
         var cur = event.currentTarget.dataset.current; 

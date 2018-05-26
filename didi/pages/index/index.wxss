@@ -106,6 +106,7 @@ page{
   position: absolute;
   height: 120rpx;
   width: 100%;
+  margin-top: 200rpx;
   line-height: 120rpx;
   left: 105rpx;
 }

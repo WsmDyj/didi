@@ -48,17 +48,23 @@ page,.container{
     line-height: 88rpx;
     color: #999999;
   }
+  .addressList{
+    margin-top: 120rpx;
+  }
   .destination{
-    
-    box-shadow:10px 50px 10px #e0e0e0;
-    top: 20rpx;
+    box-sizing: border-box;
+    top: 50rpx;
+    width: 710rpx;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow:3px 5px 10px #e0e0e0;
     background-color: #fff;
-    height: 100%;
-    width: 100%;
+   
+   
   
   }
   .destination-content{
-      width: 712px;
+    width: 712px;
      height: 119rpx;
       
       border: 1px solid #ebebeb;
@@ -75,7 +81,7 @@ page,.container{
   .destination-content image{
       width: 20rpx;
       height: 20rpx;
-     opacity: .1;
+     opacity: .3;
      color: #999999;
 
   }

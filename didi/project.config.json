@@ -58,6 +58,18 @@
 					"name": "carts",
 					"pathName": "pages/carts/carts",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wait",
+					"pathName": "pages/wait/wait",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": ""
 				}
 			]
 		}

@@ -6,7 +6,10 @@
         <input type="text" class="location-input"  bindinput="searchInputend"placeholder="你在哪儿上车"placeholder-style="color:#cccccc"/>
         <navigator url="/pages/index/index" redirect ><view class="location-cancel">取消</view></navigator>
     </view>
+    <view class="addressList">
     <scroll-view  scroll-with-animation="{{true}}" >
+    
+        
         <view class="destination" wx:for="{{entity}}" wx:key="{{item.id}}">
                <view class="destination-content">
                    <view class="content-image">
@@ -19,5 +22,5 @@
                </view> 
         </view>
     </scroll-view>
-
+</view>
 </view>
