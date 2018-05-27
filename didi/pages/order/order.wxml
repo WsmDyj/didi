@@ -1,6 +1,6 @@
 <view class="order">
         <view class="details">
-            <text class=" details-titlet">你为什么取消？</text>
+            <text class="details-titlet">你为什么取消？</text>
             <text class="details-titlef">请告知我们，我们可以改善</text>
         </view>
         <view class="weui-cells weui-cells_after-title">
@@ -17,9 +17,9 @@
                     </view>
                 </label>
             </checkbox-group>
-            <view class="weui-cell weui-cell_link">
-                <view class="weui-cell__bd moreReasons" bindtap='moreReasons'>
-                    <text>点击加载更多</text>
+            <view class="weui-cell weui-cell_link {{show==true?hidden:''}}">
+                <view class="weui-cell__bd moreReasons"  style="display: {{show==true?'none':''}};"bindtap='moreReasons'>
+                    <text>点击查看更多原因</text>
                 </view>
                 
             </view>
@@ -27,4 +27,6 @@
        
 
 </view>
-<button class="didi-btn">提交</button>
+ <navigator url= "/pages/orderClosed/orderClosed"> 
+<button class="didi-btn" bindtap="toOrderClose">提交</button>
+</navigator>

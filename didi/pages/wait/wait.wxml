@@ -18,7 +18,7 @@
     </view>
     </view>
     <view class="ft">
-        <view class="cancel" bindtap="toOrder">取消订单</view>
+        <view class="cancel" bindtap="toCancel">取消订单</view>
         <view class="notcarpool" bindtap="backIndex">不拼车</view>
     </view>
 </view>

@@ -6,7 +6,10 @@
     "pages/destination/destination",
     "pages/carts/carts",
     "pages/wait/wait",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/login/login",
+    "pages/orderClosed/orderClosed",
+    "pages/cancel/cancel"
   ],
   "window": {
     "backgroundTextStyle": "light",

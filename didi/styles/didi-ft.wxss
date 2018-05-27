@@ -1,0 +1,26 @@
+.ft{
+    position: absolute;
+    margin-bottom: 20rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    margin-top: 250rpx;
+    width: 710rpx;
+    height: 88rpx;
+    background-color: #fff;
+    box-shadow: 0 0 10rpx #f5f6f7;
+    text-align: center;
+    line-height: 88rpx;
+    color: #666666;
+    bottom: 20rpx;
+    box-shadow:0 0 10rpx #e3e4e5;
+  }
+  .ft .cancel{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+  }
+  .ft .notcarpool{
+    float: right;
+    width: 50%;
+  }

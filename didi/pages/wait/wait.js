@@ -69,9 +69,9 @@ parseTime: function(time){
     context.stroke();
     context.draw()
   },
-  toOrder(){
+  toCancel(){
     wx.navigateTo({
-      url:  "/pages/order/order",
+      url: "/pages/cancel/cancel"
     })
    
   },

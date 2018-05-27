@@ -1,0 +1,60 @@
+@import '../../styles/didi-btn.wxss';
+.hd{
+    width: 100%;
+    height: 175rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60rpx;
+    /* justify-items: center; */
+}
+.hd .hd-desc{
+    display: inline-block;
+    color: #333333;
+    font-size: 40rpx;
+}
+.hd .rules{
+    font-size: 30rpx;
+    color: #d1d1d1;
+    padding-top: 30rpx;
+}
+.bd{
+    height: 400rpx;
+    text-align: center;
+    margin-top: 100rpx;
+    background-repeat: no-repeat;
+}
+.ft{
+    margin-top: 102rpx;
+}
+.ft .cancel{
+    width: 710rpx;
+    height: 100rpx;
+    background-color: #fff;
+    right: 0;
+    color: #fff;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    border: 1px solid #4d4d4d;
+    color: #000;
+    margin-bottom: 20rpx;
+}
+.cancel-rules {
+    margin-top: 80rpx;
+    text-align: center;
+    height: 35rpx;
+    box-sizing: content-box;
+    line-height: 35rpx;
+}
+.cancel-rules image{
+    width: 35rpx;
+    height: 35rpx;
+    margin-top: 12rpx;
+}
+.rules-desc{
+    font-size: 30rpx;
+    color: #b8b8b8;
+    padding-left: 10rpx;
+    
+}

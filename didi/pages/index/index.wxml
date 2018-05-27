@@ -40,11 +40,11 @@
 </view>
 
     <!-- 页面内容 --> 
-    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
-        <swiper-item wx:for="{{[0,1,2,3,4,5,6,7]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+     <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+        <swiper-item wx:for="{{[0,1,2,3,4,5,6]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
             {{tabItem}}
         </swiper-item>
-    </swiper>  
+    </swiper>   
     
    
   

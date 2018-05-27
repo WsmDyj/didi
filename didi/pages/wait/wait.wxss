@@ -15,7 +15,8 @@
   margin-top: 20rpx;
   margin-left: auto;
   margin-right: auto;
-  box-shadow:0 0 10rpx #999999;
+  box-shadow:0 0 10rpx #e3e4e5;
+  border-radius: 5rpx;
 }
 .hd .hd-dec{
   font-size: 30rpx;
@@ -96,7 +97,7 @@
   .ft{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 250rpx;
+    margin-top: 300rpx;
     width: 710rpx;
     height: 88rpx;
     background-color: #fff;
@@ -105,7 +106,7 @@
     line-height: 88rpx;
     color: #666666;
     bottom: 20rpx;
-    box-shadow:5rpx 5rpx 10rpx #999999;
+    box-shadow:0 0 10rpx #e3e4e5;
   }
   .ft .cancel{
     float: left;

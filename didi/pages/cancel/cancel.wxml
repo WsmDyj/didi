@@ -1,0 +1,19 @@
+<view class="main">
+    <view class="hd">
+        <view class="hd-desc">这是最近的司机，重新叫车将等待</view>
+        <view class="hd-desc">更长的时间，建议您在等等</view>
+        <view class="rules">2分钟内取消行程，不需要付费补偿司机</view>
+    </view>
+    <view class="bd">
+        <image src="../../assets/images/cancelCart.png"/>
+    </view>
+    <view class="ft">
+        <button class="cancel" bindtap="BackWait" >暂不取消</button>
+        <button class="didi-btn" bindtap="toOrder">确定取消</button>
+    </view>
+
+    <view class="cancel-rules">
+        <image src="../../assets/images/rules.png"/>
+        <text class="rules-desc">取消规则</text>
+    </view>
+</view>
