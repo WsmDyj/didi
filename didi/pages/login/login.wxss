@@ -26,8 +26,8 @@
 }
 .bd .bd-tel{
     height: 122rpx;
-   
     padding-left: 45rpx;
+    margin-right: 100rpx;
 }
  .bd .bd-img{
      position: absolute;

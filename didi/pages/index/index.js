@@ -51,5 +51,16 @@ Page({
             currentTab: cur,
             navScrollLeft: (cur - 1) * singleNavWidth
         });
+    },
+  // 进入登录页
+  showUser(){
+    // 如果全局未存手机号进入登录页
+    if(app.globalData.userInfo && app.globalData.userInfo.phone){
+
+    }else{
+      wx.navigateTo({
+        url:  "/pages/login/login",
+      })
     }
+  }
 })
