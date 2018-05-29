@@ -23,8 +23,8 @@ page{
     justify-content: center;
 }
 .details-titlet{
-    color: #8d8d8d;
-    font-size: 40rpx;
+  color: rgba(0, 0, 0, .5);
+    font-size: 35rpx;
 }
 .checked image{
     width: 38rpx;
@@ -32,7 +32,7 @@ page{
 }
 .details-titlef{
     color: #fc9153;
-    font-size: 35rpx;
+    font-size: 30rpx;
 }
 .name{
     color: #666666;

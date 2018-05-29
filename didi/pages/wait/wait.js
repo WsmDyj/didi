@@ -2,22 +2,16 @@ var util = require('../../utils/util.js');
 Page({
 
   data: {
-    progress_txt: '以等待', 
-   count:0, 
-   waitTimer: null,
-    time: '00:00',
-    
+  progress_txt: '以等待', 
+  count:0, 
+  waitTimer: null,
+  time: '00:00',
   },
-  
-
-
 parseTime: function(time){
   var time = time.toString();
     return time[1]?time:'0'+time;
 },
-
   countInterval: function () {
-    // 设置倒计时 定时器 每100毫秒执行一次，计数器count+1 ,耗时6秒绘一圈
     var count = 0;
     var timer = new Date(0,0);
     var  randomTime = Math.floor(20*Math.random()) ;
@@ -26,7 +20,7 @@ parseTime: function(time){
         this.setData({
             time: this.parseTime(timer.getMinutes())+":"+this.parseTime(timer.getSeconds())
         });
-         this.drawProgress(this.data.count /60)
+        this.drawProgress(this.data.count /30)
         this.data.count++;
         timer.setMinutes(count/60);
         timer.setSeconds(count%60);
@@ -35,7 +29,10 @@ parseTime: function(time){
         this.setData({
           progress_txt: "匹配成功"
         });
-       
+        wx.redirectTo({
+          url:  "/pages/orderService/orderService",
+        });
+      clearInterval(this.waittTimer)
       }
     }, 1000)
   },
@@ -50,12 +47,16 @@ parseTime: function(time){
    ctx.stroke();
    ctx.draw();
   },
- onReady: function () {
+  onShow: function() {
+  
+    this.setData({
+      count:0
+    })
+  },
+  onReady: function () {
     this.drawProgressbg();
     this.countInterval();
     this.drawProgress();
-   
-    
   },
   
   drawProgress: function (step){ 

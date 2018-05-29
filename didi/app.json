@@ -9,7 +9,8 @@
     "pages/order/order",
     "pages/login/login",
     "pages/orderClosed/orderClosed",
-    "pages/cancel/cancel"
+    "pages/cancel/cancel",
+    "pages/orderService/orderService"
   ],
   "window": {
     "backgroundTextStyle": "light",

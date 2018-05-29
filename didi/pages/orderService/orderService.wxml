@@ -1,0 +1,52 @@
+<view class="container">
+    <view class="total">
+        
+    </view>
+    <map class="didiMap" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" bindregionchange="bindregionchange" polyline="{{polyline}}" markers="{{markers}}" controls="{{controls}}" 
+    bindmarkertap="bindmarkertap"  
+    bindcontroltap="bindcontroltap" 
+    show-location
+    >
+    <cover-view class="total">
+        <cover-view class="total-driver">
+            <cover-view class="driver-info">
+                <cover-view class="driver-img">
+                    <cover-image style="width: 150rpx;height: 150rpx;"src="../../assets/images/driver.png"/>
+                </cover-view>
+                <cover-view class="driver-detailed">
+                    <cover-view class="detailed-name">邬嗣敏
+                        <cover-image class="star" style="width: 35rpx;height: 35rpx;display: inline-block;" src="../../assets/images/star.png" ></cover-image>
+                        <cover-view class="orderTotal">5.0 1w+单</cover-view>
+                    </cover-view>
+                   
+                    <cover-view class="detailed-Cartnumber">赣A30H75</cover-view>
+
+                    <cover-view class="detailed-cart">黑色●宝马Q5</cover-view>
+                </cover-view>
+            </cover-view>
+            <cover-view class="driver-message">
+                    <cover-view class="mas">
+                            <cover-image style="width: 70rpx;height: 70rpx;" src="../../assets/images/msm.png"/>
+                        </cover-view>
+                        <cover-view class="phone">
+                            <cover-image style="width: 70rpx;height: 70rpx;" src="../../assets/images/phone.png"/>
+                        </cover-view>
+            </cover-view>
+          
+        </cover-view>
+        <cover-view class="total-looking">
+            <cover-image class="looking-img" style="width: 30rpx;height: 30rpx;" src="../../assets/images/looking.png"  ></cover-image>
+            <cover-view class="looking-desc">寻找拼友</cover-view>
+        </cover-view>
+        <cover-view class="total-prompt">请在2分1秒内走到上车点
+        </cover-view>
+
+
+    </cover-view>
+    <cover-view class="ft">
+        <cover-view class="ft-cancel"bindtap="toCancel">取消订单</cover-view>
+        <cover-view class="ft-help" bindtap="toHelp">需要帮助</cover-view>
+        <cover-view class="ft-app" bindtap="toApp">下载滴滴APP</cover-view>
+    </cover-view>
+</map>
+</view>

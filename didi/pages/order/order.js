@@ -29,7 +29,8 @@ Page({
       checked:false
     }
   ],
-  show: false
+  show: false,
+  
   },
   bindReasonChange(e){
     let reasons = this.data.reasons;
@@ -58,47 +59,47 @@ Page({
       }
       });
     
-      setTimeout(()=>{
-        const moreReason = [
-          {
-            value:6,
-            name: '司机未在规定的时间到达站点',
-            checked:false
-          },{
-            value:7,
-            name: '司机找不到上车地点',
-            checked:false
-          },{
-            value:8,
-            name: '司机要求加价或现金交易',
-            checked:false
-          },
-          {
-            value:9,
-            name: '司机服务态度恶劣',
-            checked:false
-          },
-          {
-            value:10,
-            name: '不是订单显示车辆或司机',
-            checked:false
-          },
-          {
-            value:11,
-            name: '其他',
-            checked:false
-          }
-          
-        ];
-       
-        const reasons = this.data.reasons;
-        const total = reasons.concat(moreReason)
-        this.setData({
-          show:true,
-            reasons: total
-        })
-       
-      },500)
+  setTimeout(()=>{
+    const moreReason = [
+      {
+        value:6,
+        name: '司机未在规定的时间到达站点',
+        checked:false
+      },{
+        value:7,
+        name: '司机找不到上车地点',
+        checked:false
+      },{
+        value:8,
+        name: '司机要求加价或现金交易',
+        checked:false
+      },
+      {
+        value:9,
+        name: '司机服务态度恶劣',
+        checked:false
+      },
+      {
+        value:10,
+        name: '不是订单显示车辆或司机',
+        checked:false
+      },
+      {
+        value:11,
+        name: '其他',
+        checked:false
+      }
+      
+    ];
+    
+    const reasons = this.data.reasons;
+    const total = reasons.concat(moreReason)
+    this.setData({
+      show:true,
+        reasons: total
+    })
+    
+  },500)
       
   },
 })

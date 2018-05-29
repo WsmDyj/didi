@@ -70,7 +70,7 @@ Page({
   testPhone: function (s) {
     if (s != null && s) {
       var length = s.length
-      if (length == 11 && /^[1][0-9]{10}$/.test(s)) {
+      if (length = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/.test(s)) {
         return true
       } else {
         return false
@@ -96,6 +96,7 @@ Page({
   },
   // 清空手机号
   deletePhone: function () {
+    console.log("a")
     this.setData({phone: ''})
   },
   // 登录

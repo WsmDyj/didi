@@ -49,12 +49,6 @@
 				},
 				{
 					"id": -1,
-					"name": "destination",
-					"pathName": "pages/destination/destination",
-					"query": ""
-				},
-				{
-					"id": -1,
 					"name": "carts",
 					"pathName": "pages/carts/carts",
 					"query": ""
@@ -87,6 +81,12 @@
 					"id": -1,
 					"name": "cancel",
 					"pathName": "pages/cancel/cancel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderService",
+					"pathName": "pages/orderService/orderService",
 					"query": ""
 				}
 			]

@@ -7,17 +7,21 @@
         <image src="../../assets/images/nav-me.png"/>
       </view>
     <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="{{true}}">
-        <block wx:for="{{navData}}" wx:for-index="id" wx:for-item="navItem" wx:key="index">
-            <view class="nav-item {{currentTab == id ?'active':''}}"  data-current="{{id}}" bindtap="switchNav">{{navItem.name}}</view>
+        <block wx:for="{{navData}}" wx:for-index="id"  wx:for-item="navItem" wx:key="index">
+            <view class="nav-item {{currentTab == id ?'active':''}}"  data-name="{{navItem.name}}" data-current="{{id}}" bindtap="switchNav">{{navItem.name}}</view>
         </block>        
     </scroll-view>
-      <navigator url= "/pages/carts/carts" > <view class="nav-all">
+      <navigator url= "/pages/carts/carts" >
+     <view class="nav-all">
       <image src="../../assets/images/nav-all.png"/>
     </view>
     </navigator>
   </view>
     <view class="content">
-        <view class="didi-time">最快3分钟接驾</view>
+        <view class="didi-time">{{waitingTimes}}</view>
+            <import  src="/templates/sprinner.wxml" />
+        <template is="sprinner" data='{{isLoading}}'>
+        </template>
         <view class="circle-str"></view>
              <navigator url= "/pages/starting/starting" redirect > 
                 <input type="text" class="didi-input-str" focus="{{false}}" placeholder="江西财经大学麦庐校区"placeholder-style="color:#333333"/>
@@ -26,9 +30,45 @@
                  <input type="text" class="didi-input-end"focus="{{false}}"  placeholder="你要去哪儿"placeholder-style="color:#cccccc"/>
              </navigator>
             <view class="circle-end"></view>
-        <button class="didi-btn"bindtap="ToWait">呼叫{{item}}</button>
+        <button class="didi-btn"bindtap="ToWait">呼叫{{cart}}</button>
     </view>
     
+    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+       <!-- <swiper-item wx:for="{{[0,1,2,3,4,5,6]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+            {{tabItem}}
+        </swiper-item>  -->
+
+        <swiper-item class="tab-express">
+            <view class="express-members">
+                <view class="members-img"><image style="width: 90rpx;height: 102rpx;" src="../../assets/images/members.png"/></view>
+                <view class="members-desc">会员</view>
+            </view>
+            <view class="express-package">
+                <view class="members-img"><image style="width: 90rpx;height: 102rpx;" src="../../assets/images/package.png"/></view>
+                <view class="members-desc">套餐</view>
+            </view>
+            <view class="express-recruiting">
+                <view class="members-img"><image style="width: 147rpx;height: 102rpx;" src="../../assets/images/recruiting.png"/></view>
+                <view class="members-desc">招募</view>
+            </view>
+        </swiper-item>
+
+         <swiper-item class="tab-express">
+            <view class="express-members">
+                <view class="members-img"><image style="width: 90rpx;height: 102rpx;" src="../../assets/images/Pickup.png"/></view>
+                <view class="members-desc">接机</view>
+            </view>
+            <view class="express-package">
+                <view class="members-img"><image style="width: 90rpx;height: 102rpx;" src="../../assets/images/Picksend.png"/></view>
+                <view class="members-desc">送机</view>
+            </view>
+        </swiper-item>
+
+        
+    </swiper>   
+
+
+
     <view class="swiper">
     <swiper autoplay="{{true}}" interval="{{interval}}" circular="{{true}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
@@ -40,11 +80,7 @@
 </view>
 
     <!-- 页面内容 --> 
-     <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
-        <swiper-item wx:for="{{[0,1,2,3,4,5,6]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
-            {{tabItem}}
-        </swiper-item>
-    </swiper>   
+    
     
    
   

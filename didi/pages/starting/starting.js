@@ -10,6 +10,7 @@ Page({
     scale: 16,
     controls: [],
     markers:[],
+   
     mobileLocation : {//移动选择位置数据
       longitude : 0,
       latitude: 0,
@@ -45,8 +46,7 @@ Page({
             height: 45
             },
           clickable: true
-        },
-        {
+        },{
           id: 6,
           iconPath: '../../assets/images/location.png',
           position: {
@@ -56,31 +56,27 @@ Page({
             height: 50,
             },
           clickable: true
+        }],
+        circles: [{
+          latitude: res.latitude,
+          longitude: res.longitude,
+          color: '#FF0000DD',
+          fillColor: '#7cb5ec88',
+          radius: 3000,
+          strokeWidth: 1
         }]
       })
      }
    })
 
   },
-  bindregionchange: function(e){
-    // if(e.type == 'begin'){
-    //   wx.request({
-    //     url: '',
-    //     success: function(res){
-    //       this.setData({
-    //         _markers: res.data.data
-    //       })
-    //     },
-    //   })
-    // }else if(e.type=='end'){
-    //   this.setData({
-    //     makers: this.data._markers
-    //   })
-    // }
+  bindcontroltap(e){
 
   },
   bindmarkertap: function(){
-      //点击标记市触发
+     switch(e.controlId){
+       case 1: this.movetoPosition();
+     }
   },
   
 

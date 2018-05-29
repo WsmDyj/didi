@@ -9,7 +9,7 @@
   background-color: #fff;
   font-size: 28rpx;
   display: flex;
-  height: 120rpx;
+  height: 100rpx;
   align-items: center;
   justify-items: center;
   margin-top: 20rpx;
