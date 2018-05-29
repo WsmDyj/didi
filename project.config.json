@@ -1,0 +1,95 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.98",
+	"appid": "wxeed65f399d1f87f9",
+	"projectname": "didi",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "demo",
+					"pathName": "pages/demo/demo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "map",
+					"pathName": "pages/starting/starting",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "carts",
+					"pathName": "pages/carts/carts",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "wait",
+					"pathName": "pages/wait/wait",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "order",
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderClosed",
+					"pathName": "pages/orderClosed/orderClosed",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cancel",
+					"pathName": "pages/cancel/cancel",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderService",
+					"pathName": "pages/orderService/orderService",
+					"query": ""
+				}
+			]
+		}
+	}
+}

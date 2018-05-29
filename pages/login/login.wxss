@@ -1,0 +1,46 @@
+@import '../../styles/didi-btn.wxss';
+.mian{
+    background-color: #f3f4f5;
+  width: 100%;
+  height: 100%;
+}
+.container{
+    margin-top: 165rpx;
+}
+.hd{
+  
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+
+}
+.hd .login{
+    color: #000;
+    font-size: 40rpx;
+}
+.bd{
+    border: 1px solid #eeeff0;
+    background-color: #fff;
+   margin-top: 90rpx;
+   box-shadow:0 0 1rpx #e5e6e7;
+}
+.bd .bd-tel{
+    height: 122rpx;
+   
+    padding-left: 45rpx;
+}
+ .bd .bd-img{
+     position: absolute;
+     float: right;
+     top: 340rpx;
+     right: 55rpx;
+     width: 35rpx;
+     height: 35rpx;
+     
+ }
+.hd{
+    margin-top: 28rpx;
+}
+.hidden{
+    display: none
+}

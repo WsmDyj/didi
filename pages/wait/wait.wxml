@@ -1,0 +1,24 @@
+ <view class="container">
+    <view class="hd">
+        <view class="hd-img"><image src="../../assets/images/remind.png"/></view>
+        <view class="hd-dec">您上车的站点为<text class="hd-dec_address">「江西财经大学」</text></view>
+    </view>
+    <view class="bd">
+    <view class="bd_titl">
+        <text class="titl-maxdesc">正在为您寻找车辆和拼友</text>
+        <text class="title-mindesc">每人一小步，更快更顺路</text>
+    </view>
+     <view class='progress_box'>
+        <canvas class="progress_bg"   canvas-id="canvasProgressbg">  </canvas>
+        <canvas class="progress_canvas"  canvas-id="canvasProgress">  </canvas>
+        <view class="progress_text">
+            <text class='progress_info'> {{progress_txt}}</text>
+            <text class="progress_time">{{time}}</text>
+        </view>    
+    </view>
+    </view>
+    <view class="ft">
+        <view class="cancel" bindtap="toCancel">取消订单</view>
+        <view class="notcarpool" bindtap="backIndex">不拼车</view>
+    </view>
+</view>

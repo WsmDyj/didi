@@ -1,0 +1,32 @@
+<view class="order">
+        <view class="details">
+            <text class="details-titlet">你为什么取消？</text>
+            <text class="details-titlef">请告知我们，我们可以改善</text>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <checkbox-group   bindchange="bindReasonChange">
+                <label class="weui-cell weui-check__label"  wx:for="{{reasons}}" wx:key="value">
+                    <checkbox class="weui-check"  value="{{item.value}}"checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd name" >{{item.name}}</view>
+                    <view wx:if="{{item.checked}}" class="checked ">
+                        <image src="../../assets/images/checked.png"></image>
+                    </view>
+                    <view wx:if="{{!item.checked}}" class="checked ">
+                        <image src="../../assets/images/nochecked.png"></image>
+                    </view>
+                </label>
+            </checkbox-group>
+            <view class="weui-cell weui-cell_link {{show==true?hidden:''}}">
+                <view class="weui-cell__bd moreReasons"  style="display: {{show==true?'none':''}};"bindtap='moreReasons'>
+                    <text>点击查看更多原因</text>
+                </view>
+                
+            </view>
+        </view>
+       
+
+</view>
+ <navigator url= "/pages/orderClosed/orderClosed"> 
+<button class="didi-btn" bindtap="toOrderClose">提交</button>
+</navigator>
