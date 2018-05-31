@@ -21,15 +21,21 @@ Page({
             '../../assets/images/swiper-1.png',
             '../../assets/images/swiper-3.png'
         ],
-      
+        address: '江西财经大学麦庐校区 ',
         duration: 1000,
         interval: 5000,
         isLoading: true,
     },
     onLoad: function(options) {
-        console.log(options)
+        if(options.address != null && options.address !=''){
+            this.setData({
+                address: options.address
+            })
+        }
+        console.log(options.address)
+
+
        const id = options.id;
-      
        this.setData({
            currentTab:id,
        })

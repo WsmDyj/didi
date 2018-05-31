@@ -1,8 +1,7 @@
 
 
 <view class="container">
-
-  <view class="location">
+   <view class="location">
     <view class="location-city">
       <text>南昌</text>
     </view>
@@ -10,14 +9,28 @@
     <navigator url="/pages/index/index" redirect ><view class="location-cancel">取消</view></navigator>
   </view>
 
-  
-    <map class="didiMap" latitude="{{latitude}}" 
-    longitude="{{longitude}}" 
-    scale="{{scale}}" 
-    bindregionchange="bindregionchange"
-    polyline="{{polyline}}" 
-    markers="{{markers}}" 
-    controls="{{controls}}" 
+   <map class="didiMap" id="didiMap"
+   latitude="{{latitude}}"
+    longitude="{{longitude}}"
+     scale="{{scale}}"
+      bindregionchange="bindregionchange"
+       polyline="{{polyline}}" 
+       markers="{{markers}}"
+        controls="{{controls}}" 
     bindmarkertap="bindmarkertap"  
-  show-location />
+    bindcontroltap="controltap" 
+    show-location>
+    <cover-view class="address">
+      <cover-image style="width: 80rpx;height: 80rpx;" src="../../assets/images/address.png"></cover-image>
+      
+      <cover-view class="address-desc">
+        <cover-view class="blur">{{bluraddress}}</cover-view>
+      <cover-view class="detailed"> {{address}}</cover-view> 
+      
+      
+      </cover-view>
+      <cover-view class="address-btn" bindtap="toIndex">确定</cover-view>
+    </cover-view>
+    
+    </map>
   </view>

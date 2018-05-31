@@ -1,7 +1,5 @@
 <view class="container">
-    <view class="total">
-        
-    </view>
+    
     <map class="didiMap" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" bindregionchange="bindregionchange" polyline="{{polyline}}" markers="{{markers}}" controls="{{controls}}" 
     bindmarkertap="bindmarkertap"  
     bindcontroltap="bindcontroltap" 

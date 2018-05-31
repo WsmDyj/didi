@@ -4,7 +4,7 @@
     height: 100vh; 
   }
   .location{
-    position: absolute ;
+   
     width: 100%;
     height: 88rpx;
     z-index: 999;
@@ -49,14 +49,40 @@
     color: #999999;
   }
   .didiMap{
-    position: absolute;
-    left: 0;
-   top:88rpx;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 10000rpx;
-    z-index: 1;
+   
+    height: 100%;
+    width: 100%;   
+  
   }
+   .address{
+     position: absolute;
+     width: 710rpx;
+     height: 120rpx;
+     margin-left: 20rpx;
+     margin-right: 20rpx;
+     background-color: #fff;
+     margin-top: 950rpx;
+     box-sizing: border-box;
+     display: flex;
+     justify-items: center;
+     align-items: center;
+   }
+   .address-desc{
+     font-size: 26rpx;  
+     height: 80rpx;
+   }
+   .address-desc .blur{
+     font-size: 30rpx;
+     color: #333333;
+   }
+   .address-desc .detailed{
+     padding-top: 10rpx;
+      color: #c7c7c7;
+   }
+   .address-btn{
+     flex: 1;
+     text-align: center;
+     color: #666666;
+   }
   
  

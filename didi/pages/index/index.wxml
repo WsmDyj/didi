@@ -24,11 +24,11 @@
         </template>
         <view class="circle-str"></view>
              <navigator url= "/pages/starting/starting" redirect > 
-                <input type="text" class="didi-input-str" focus="{{false}}" placeholder="江西财经大学麦庐校区"placeholder-style="color:#333333"/>
+                <view class="didi-input-str" style="color: #333333">{{address}}</view>
              </navigator>
              <navigator url=  "/pages/destination/destination" redirect >
-                 <input type="text" class="didi-input-end"focus="{{false}}"  placeholder="你要去哪儿"placeholder-style="color:#cccccc"/>
-             </navigator>
+                <view class="didi-input-end" style="color: #cccccc;">你要去哪儿</view>
+                </navigator>
             <view class="circle-end"></view>
         <button class="didi-btn"bindtap="ToWait">呼叫{{cart}}</button>
     </view>

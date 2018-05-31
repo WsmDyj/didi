@@ -1,135 +1,126 @@
-
+var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+var qqmapsdk;
+qqmapsdk = new QQMapWX({
+  key:'DHNBZ-2ZLKK-T7IJJ-AXSQW-WX5L6-A6FJZ'
+});
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    latitude: 0,
-    longitude:0,
     scale: 16,
-    controls: [],
-    markers:[],
-   
-    mobileLocation : {//移动选择位置数据
-      longitude : 0,
-      latitude: 0,
-      address: '',
-   }
+    latitude: 0,
+    longitude: 0,
+    address: '',
+    bluraddress: ''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-   
     wx.getLocation({
-     type: "gcj02",
-     success:(res)=>{
-      console.log(res.latitude, res.longitude)
-       this.setData({
-         longitude:res.longitude,
-         latitude: res.latitude
-       })
-     }
-   });
-   wx.getSystemInfo({
-     success:(res)=>{
-      this.setData({
-        controls:[{
-          id: 4,
-          iconPath: '../../assets/images/marker.png',
-          position: {
-            left: res.windowWidth/2 - 11,
-            top: res.windowHeight/2 - 45,
-            width: 22,
-            height: 45
-            },
-          clickable: true
-        },{
-          id: 6,
-          iconPath: '../../assets/images/location.png',
-          position: {
-            left: 20, // 单位px
-            top: res.windowHeight -200, 
-            width: 50, // 控件宽度/px
-            height: 50,
-            },
-          clickable: true
-        }],
-        circles: [{
-          latitude: res.latitude,
-          longitude: res.longitude,
-          color: '#FF0000DD',
-          fillColor: '#7cb5ec88',
-          radius: 3000,
-          strokeWidth: 1
-        }]
-      })
-     }
-   })
-
-  },
-  bindcontroltap(e){
-
-  },
-  bindmarkertap: function(){
-     switch(e.controlId){
-       case 1: this.movetoPosition();
-     }
-  },
-  
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+      type: "gcj02",
+      success:(res)=>{
+        // console.log(res)
+        this.setData({
+          longitude:res.longitude,
+          latitude: res.latitude
+        })
      
+    var that = this;
+    qqmapsdk.reverseGeocoder({
+      location: {
+        latitude:  res.latitude,
+        longitude: res.longitude,
+    },
+      success: function (res) {
+        that.setData({
+          address: res.result.address,
+          bluraddress: res.result.formatted_addresses.recommend
+        });
+      },
+    
+    });
+      }
+      })
+
+    // this.moveToLocation();
+
+    wx.getSystemInfo({
+      success: (res)=>{
+        this.setData({
+          controls:[{
+            id: 1,
+            iconPath: '../../assets/images/marker.png',
+            position: {
+              left: res.windowWidth/2 - 11,
+              top: res.windowHeight/2 - 45,
+              width: 22,
+              height: 45
+              },
+            clickable: true
+          },{
+            id: 2,
+            iconPath: '../../assets/images/location.png',
+            position: {
+              left: 20, // 单位px
+              top: res.windowHeight -200, 
+              width: 40, // 控件宽度/px
+              height: 40,
+              },
+            clickable: true
+          }],
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  onReady: function(){
     this.mapCtx = wx.createMapContext("didiMap"); // 地图组件的id
-    this.movetoPosition();
+    this.movetoPosition()
+
+  },
+  controltap: function(e){
+    console.log("hello")
+    console.log(e.controlId)
+  
+  },
+  bindregionchange: function(e){
+    var that = this
+    this.mapCtx.getCenterLocation({
+      success: function (res) {
+      qqmapsdk.reverseGeocoder({
+        location: {
+          latitude:  res.latitude,
+          longitude: res.longitude,
+      },
+      success: function (res) {
+        console.log(res)
+        that.setData({
+          address: res.result.address,
+          bluraddress: res.result.formatted_addresses.recommend
+        })
+      },
+       
+      });
+       
+      }
+    })
+
   },
   movetoPosition: function(){
     this.mapCtx.moveToLocation();
   },
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+toIndex(){
+  let address = this.data.bluraddress;
+  // console.log(address)
+  wx.redirectTo({
+    url: "/pages/index/index?address="+address,
+    success: function(res){
+      // success
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+},
   
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
   
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })
