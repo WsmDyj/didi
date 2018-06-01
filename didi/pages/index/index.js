@@ -13,7 +13,7 @@ Page({
             {id:6,name:'自驾租车',url:'../../assets/images/cart7.png'},
             {id:7,name:'二手车',url:'../../assets/images/cart8.png'},
             ],
-        currentTab: 0,
+        currentTab: 1,
         cart: '快车',
         navScrollLeft: 0,
         imgUrls:[
@@ -21,25 +21,22 @@ Page({
             '../../assets/images/swiper-1.png',
             '../../assets/images/swiper-3.png'
         ],
-        address: '江西财经大学麦庐校区 ',
         duration: 1000,
         interval: 5000,
         isLoading: true,
+        color:"#cccccc",
     },
     onLoad: function(options) {
-        if(options.address != null && options.address !=''){
-            this.setData({
-                address: options.address
-            })
-        }
-        console.log(options.address)
-
-
-       const id = options.id;
-       this.setData({
-           currentTab:id,
-       })
+      
        this.requestWaitingtime();
+    },
+    onShow(){
+      
+        this.setData({
+            address:app.globalData.bluraddress,
+            destination:app.globalData.destination,
+            currentTab:app.globalData.id,
+        })
     },
     requestWaitingtime(){
         setTimeout(() => {
@@ -60,7 +57,7 @@ Page({
               })
         }, 1000);
     },
-    
+   
     ToWait(){
         wx.reLaunch({
             url:  "/pages/wait/wait",

@@ -3,13 +3,16 @@ var qqmapsdk;
 qqmapsdk = new QQMapWX({
   key:'DHNBZ-2ZLKK-T7IJJ-AXSQW-WX5L6-A6FJZ'
 });
+const app = getApp()
 Page({
   data: {
     scale: 16,
     latitude: 0,
     longitude: 0,
     address: '',
-    bluraddress: ''
+    bluraddress: '',
+   
+   
   },
   onLoad: function (options) {
     wx.getLocation({
@@ -28,6 +31,8 @@ Page({
         longitude: res.longitude,
     },
       success: function (res) {
+      
+        app.globalData.location=location
         that.setData({
           address: res.result.address,
           bluraddress: res.result.formatted_addresses.recommend
@@ -75,7 +80,7 @@ Page({
 
   },
   controltap: function(e){
-    console.log("hello")
+  
     console.log(e.controlId)
   
   },
@@ -83,13 +88,15 @@ Page({
     var that = this
     this.mapCtx.getCenterLocation({
       success: function (res) {
+        app.globalData.strLatitude=res.latitude
+        app.globalData.strLongitude= res.longitude
       qqmapsdk.reverseGeocoder({
         location: {
           latitude:  res.latitude,
           longitude: res.longitude,
       },
       success: function (res) {
-        console.log(res)
+    
         that.setData({
           address: res.result.address,
           bluraddress: res.result.formatted_addresses.recommend
@@ -106,10 +113,13 @@ Page({
     this.mapCtx.moveToLocation();
   },
 toIndex(){
-  let address = this.data.bluraddress;
-  // console.log(address)
+  let  bluraddress = this.data.bluraddress;
+  let address= this.data.address;
+ 
+  app.globalData.address=address;
+ app.globalData.bluraddress=bluraddress
   wx.redirectTo({
-    url: "/pages/index/index?address="+address,
+    url: "/pages/index/index",
     success: function(res){
       // success
     },

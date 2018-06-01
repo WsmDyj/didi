@@ -1,59 +1,104 @@
-// pages/orderService/orderService.js
+var QQMapWX = require('../../libs/qqmap-wx-jssdk.js');
+var qqmapsdk;
+qqmapsdk = new QQMapWX({
+  key:'DHNBZ-2ZLKK-T7IJJ-AXSQW-WX5L6-A6FJZ'
+});
+const app = getApp();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-    scale: 18,
-    latitude: 0,
-    longitude: 0
+    scale: 14,
+   
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+ 
   onLoad: function () {
-    wx.getSystemInfo({
-      success: (res)=>{
-        this.setData({
-          controls:[{
-            id: 1,
-            iconPath: '../../assets/images/marker.png',
-            position: {
-              left: res.windowWidth/2 - 11,
-              top: res.windowHeight/2 - 45,
-              width: 22,
-              height: 45
-              },
-            clickable: true
-          },{
-            id: 2,
-            iconPath: '../../assets/images/location.png',
-            position: {
-              left: 20, // 单位px
-              top: res.windowHeight -150, 
-              width: 40, // 控件宽度/px
-              height: 40,
-              },
-            clickable: true
-          },{
-            id: 3,
-            iconPath: '../../assets/images/walk.png',
-            position: {
-              left: 20, // 单位px
-              top: res.windowHeight -200, 
-              width: 40, // 控件宽度/px
-              height: 40,
-              },
-            clickable: true
-          }],
-        })
-      }
+    let { bluraddress,strLatitude,strLongitude,endLatitude,endLongitude} = app.globalData
+    this.setData({
+      markers: [{
+        iconPath: "../../assets/images/str.png",
+        id: 0,
+        latitude: strLatitude,
+        longitude:strLongitude,
+        width: 30,
+        height: 30
+      },{
+        iconPath: "../../assets/images/end.png",
+        id: 0,
+        latitude: endLatitude,
+        longitude:endLongitude,
+        width: 30,
+        height: 30
+      }],
+      polyline: [{
+        points: [{
+          longitude: strLongitude,
+          latitude: strLatitude
+        }, {
+          longitude:endLongitude,
+          latitude:endLatitude
+        }],
+        color:"red",
+        width: 4,
+        dottedLine: true
+      }],
+  
     })
+    // qqmapsdk.calculateDistance({
+    //   to:[{
+    //     latitude:strLatitude,
+    //     longitude: strLongitude
+    // }, {
+    //     latitude: endLatitude,
+    //     longitude:endLongitude
+    // }],
+    // success: function(res) {
+       
+    // },
+   
+    // })
+  wx.getSystemInfo({
+    success: (res)=>{
+      this.setData({
+        controls:[{
+          id: 1,
+          iconPath: '../../assets/images/mapCart.png',
+          position: {
+            left: res.windowWidth/2 - 11,
+            top: res.windowHeight/2 - 60,
+            width: 22,
+            height: 45
+            },
+          clickable: true
+        },{
+          id: 2,
+          iconPath: '../../assets/images/location.png',
+          position: {
+            left: 20, // 单位px
+            top: res.windowHeight -150, 
+            width: 40, // 控件宽度/px
+            height: 40,
+            },
+          clickable: true
+        },{
+          id: 3,
+          iconPath: '../../assets/images/walk.png',
+          position: {
+            left: 20, // 单位px
+            top: res.windowHeight -200, 
+            width: 40, // 控件宽度/px
+            height: 40,
+            },
+          clickable: true
+        }],
+     
+      })
+    }
+  })
+  
   },
 
   onShow(){
+    
     this.mapCtx = wx.createMapContext("didiMap");
     this.movetoPosition();
   },
@@ -63,6 +108,9 @@ Page({
       case 2: this.movetoPosition();
       break;
     }
+  },
+  onReady(){
+   
   },
   movetoPosition: function(){
     this.mapCtx.moveToLocation();

@@ -3,6 +3,7 @@ var qqmapsdk;
 qqmapsdk = new QQMapWX({
   key:'DHNBZ-2ZLKK-T7IJJ-AXSQW-WX5L6-A6FJZ'
 });
+const app = getApp();
 Page({
 
   data: {
@@ -22,26 +23,24 @@ Page({
     value: '',
     address: []
   },
-  destination(e){
-    // console.log(e)
-   let title =this.entity.title
-  //  console.log(title)
-    wx.redirectTo({
-      url: "/pages/index/index?title="+title,
+
+  toIndex(e){
+    const destination = e.currentTarget.dataset.destination;
+    const endAddress =  e.currentTarget.dataset.end;
+    qqmapsdk.geocoder({
+      address: endAddress,
       success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
+        app.globalData.endLatitude=res.result.location.lat;
+        app.globalData. endLongitude= res.result.location.lng;
       }
+    })
+    app.globalData.destination=destination,
+    wx.redirectTo({
+      url: "/pages/index/index",
     })
   },
 
   switchCity(e){
-    console.log("hello")
     qqmapsdk.getCityList({
       success: function(res){
         console.log(res)
@@ -49,7 +48,7 @@ Page({
     })
   },
   searchInputend(e){
-    // console.log(e)
+   
     var that = this;
     var  value = e.detail.value
     var address = that.address;
@@ -58,7 +57,6 @@ Page({
       keyword: value,
       region: '南昌',
       success: function(res){
-       console.log(res.data)
         let data = res.data
       that.setData({
         address: data,
@@ -67,59 +65,5 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
   
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  }
 })

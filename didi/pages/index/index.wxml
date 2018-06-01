@@ -16,7 +16,8 @@
       <image src="../../assets/images/nav-all.png"/>
     </view>
     </navigator>
-  </view>
+    </view>
+    
     <view class="content">
         <view class="didi-time">{{waitingTimes}}</view>
             <import  src="/templates/sprinner.wxml" />
@@ -27,7 +28,7 @@
                 <view class="didi-input-str" style="color: #333333">{{address}}</view>
              </navigator>
              <navigator url=  "/pages/destination/destination" redirect >
-                <view class="didi-input-end" style="color: #cccccc;">你要去哪儿</view>
+             <input type="text" class="didi-input-end" value="{{destination}}"  style="color: #333333" placeholder="你要去哪儿" placeholder-color="#ccccccc" focus="{{false}}"/>
                 </navigator>
             <view class="circle-end"></view>
         <button class="didi-btn"bindtap="ToWait">呼叫{{cart}}</button>

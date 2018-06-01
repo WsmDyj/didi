@@ -1,9 +1,6 @@
-// pages/carts/carts.js
+const app = getApp()
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
     navData:[
       {id:0,name:'快车',url:'../../assets/images/cart1.png'},
@@ -19,9 +16,9 @@ Page({
   backIndex(e){
     const id = e.currentTarget.dataset.id;
     const name = e.currentTarget.dataset.name;
- 
+    app.globalData.id=id
     wx.reLaunch({
-      url: `/pages/index/index?id=${id}`
+      url: "/pages/index/index"
     })
   },
 

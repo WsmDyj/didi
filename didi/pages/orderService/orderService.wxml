@@ -1,6 +1,10 @@
 <view class="container">
     
-    <map class="didiMap" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" bindregionchange="bindregionchange" polyline="{{polyline}}" markers="{{markers}}" controls="{{controls}}" 
+    <map class="didiMap" latitude="{{latitude}}" 
+    longitude="{{longitude}}" 
+    scale="{{scale}}" 
+    bindregionchange="bindregionchange" 
+    polyline="{{polyline}}" markers="{{markers}}" controls="{{controls}}" 
     bindmarkertap="bindmarkertap"  
     bindcontroltap="bindcontroltap" 
     show-location
