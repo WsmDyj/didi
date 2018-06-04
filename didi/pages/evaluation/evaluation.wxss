@@ -1,0 +1,51 @@
+@import '../../styles/driver.wxss';
+@import '../../styles/didi-ft.wxss';
+.cost{
+    position: absolute;
+    height: 210rpx;
+    width: 100%;
+    text-align: center;
+    margin-top: 30rpx;
+    font-size: 26rpx;
+}
+.cost-desc{
+    margin-top: 20rpx;
+    margin-left: 200rpx;
+    width: 300rpx;
+    color: #666666;
+}
+.obvious{
+    float: left;
+}
+.invoice{
+    float: right;
+}
+.evaluation{
+    border-top: 1px solid #f5f5f5;
+    height: 195rpx;
+    width: 100%;
+    /* background: red; */
+    margin-top: 195rpx;
+    text-align: center;
+}
+.evaluation-name{
+    margin-top: 40rpx;
+    color: #666666;
+}
+.evaluation-stars{
+    width: 400rpx;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 150rpx;
+    margin-top: 10rpx;
+}
+.stars-solid{
+    padding-right: 10rpx;
+    color:#ffd936;
+    font-size: 50rpx;
+}
+.stars-empty{
+    color:#ffd936;
+    padding-right: 10rpx;
+    font-size: 50rpx;
+}

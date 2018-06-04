@@ -9,11 +9,11 @@
         </view>
         <view class="total-start">
             <view class="start-pic"></view>
-            <text class="desc">江西财经大学(麦庐校区)</text>
+            <text class="desc">{{starAddress}}</text>
         </view>
         <view class="total-end">
             <view class="end-pic"></view>
-            <text class="desc">东华理工大学广兰大道</text>
+            <text class="desc">{{eddAddress}}</text>
         </view>
     </view>
     <view class="content">

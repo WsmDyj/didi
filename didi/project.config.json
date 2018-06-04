@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -93,6 +93,18 @@
 					"id": -1,
 					"name": "destination",
 					"pathName": "pages/destination/destination",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cost",
+					"pathName": "pages/cost/cost",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "evaluation",
+					"pathName": "pages/evaluation/evaluation",
 					"query": ""
 				}
 			]

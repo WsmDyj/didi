@@ -5,8 +5,6 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
- 
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
@@ -33,15 +31,15 @@ App({
       }
     })
   },
-  
   globalData: {
     userInfo: null,
-    bluraddress: '江西财经大学麦庐校区 ',
+    bluraddress: '范家新村-公交站',
     destination: '',
     id: '快车',
     strLatitude: 0,
     strLongitude: 0,
     endLatitude: 0,
-    endLongitude: 0
+    endLongitude: 0,
+    play: '18.7'
   }
 })

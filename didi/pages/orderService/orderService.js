@@ -3,15 +3,16 @@ var qqmapsdk;
 qqmapsdk = new QQMapWX({
   key:'DHNBZ-2ZLKK-T7IJJ-AXSQW-WX5L6-A6FJZ'
 });
+import util from '../../utils/index';
+
 const app = getApp();
 Page({
-
   data: {
     scale: 14,
-   
+    hiddenLoading:false
   },
- 
   onLoad: function () {
+
     let { bluraddress,strLatitude,strLongitude,endLatitude,endLongitude} = app.globalData
     this.setData({
       markers: [{
@@ -42,20 +43,8 @@ Page({
         dottedLine: true
       }],
   
-    })
-    // qqmapsdk.calculateDistance({
-    //   to:[{
-    //     latitude:strLatitude,
-    //     longitude: strLongitude
-    // }, {
-    //     latitude: endLatitude,
-    //     longitude:endLongitude
-    // }],
-    // success: function(res) {
-       
-    // },
+    });
    
-    // })
   wx.getSystemInfo({
     success: (res)=>{
       this.setData({
@@ -98,16 +87,32 @@ Page({
   },
 
   onShow(){
-    
+    this.requesDriver();
     this.mapCtx = wx.createMapContext("didiMap");
     this.movetoPosition();
   },
+  requesDriver(){
+    util.request({
+      url: 'https://www.easy-mock.com/mock/5aded45053796b38dd26e970/comments#!method=get',
+      mock: false,
+    }).then((res)=>{
+      
+      const drivers = res.data.drivers
+      const driver = drivers[Math.floor(Math.random()*drivers.length)];
+      wx.setStorage({
+        key:"driver",
+        data:driver
+      });
+      this.setData({
+        hiddenLoading:true,
+        driver:driver
+      })
+    })
+
+  },
   bindcontroltap: (e)=>{
     console.log("hello")
-    switch(e.controlId){
-      case 2: this.movetoPosition();
-      break;
-    }
+    this.movetoPosition();
   },
   onReady(){
    
@@ -120,7 +125,7 @@ Page({
 
   },
   toCancel(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: "/pages/cancel/cancel"
     })
    
@@ -132,11 +137,9 @@ Page({
       duration: 1000
     })
   },
-  toHelp(){
-    wx.showToast({
-      title: '暂不支持',
-      icon: 'success',
-      duration: 1000
+  toEvaluation(){
+    wx.redirectTo({
+      url:"/pages/evaluation/evaluation",
     })
   },
   onReady: function () {

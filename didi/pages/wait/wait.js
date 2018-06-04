@@ -1,6 +1,6 @@
 var util = require('../../utils/util.js');
+const app = getApp()
 Page({
-
   data: {
   progress_txt: '以等待', 
   count:0, 
@@ -11,32 +11,33 @@ parseTime: function(time){
   var time = time.toString();
     return time[1]?time:'0'+time;
 },
-  countInterval: function () {
-    var count = 0;
+
+
+countInterval: function () {
+   var curr = 0;
     var timer = new Date(0,0);
     var  randomTime = Math.floor(20*Math.random()) ;
-    this.waittTimer = setInterval(() => {
-      if (this.data.count <= randomTime) {
-        this.setData({
-            time: this.parseTime(timer.getMinutes())+":"+this.parseTime(timer.getSeconds())
-        });
-        this.drawProgress(this.data.count /30)
-        this.data.count++;
-        timer.setMinutes(count/60);
-        timer.setSeconds(count%60);
-        count++;
-      } else {
-        this.setData({
-          progress_txt: "匹配成功"
-        });
-        wx.redirectTo({
+  this.countTimer = setInterval(() => {
+    if (this.data.count <= randomTime) {
+      this.setData({
+              time: this.parseTime(timer.getMinutes())+":"+this.parseTime(timer.getSeconds()),
+          });
+          timer.setMinutes(curr/60);
+                timer.setSeconds(curr%60);
+                curr++;
+       this.drawProgress(this.data.count / (60/2))
+      this.data.count++;
+    } else {
+      this.setData({
+        progress_txt: "匹配成功"
+      }); 
+      wx.redirectTo({
           url:  "/pages/orderService/orderService",
         });
-      clearInterval(this.waittTimer)
-      }
-    }, 1000)
-  },
-
+      clearInterval(this.countTimer);
+    }
+  }, 1000)
+},
   drawProgressbg: function(){
    var ctx = wx.createCanvasContext('canvasProgressbg');
    ctx.setLineWidth(4);
@@ -48,9 +49,8 @@ parseTime: function(time){
    ctx.draw();
   },
   onShow: function() {
-  
     this.setData({
-      count:0
+      address: app.globalData.bluraddress,
     })
   },
   onReady: function () {
@@ -66,18 +66,18 @@ parseTime: function(time){
     context.setLineCap('round')
     context.beginPath();
       // 参数step 为绘制的圆环周长，从0到2为一周 。 -Math.PI / 2 将起始角设在12点钟位置 ，结束角 通过改变 step 的值确定
-    context.arc(110, 110, 100, -Math.PI / 2, step * Math.PI - Math.PI / 2, false);
+    context.arc(110, 110, 100, -Math.PI /2, step*Math.PI /2-Math.PI /2, false);
     context.stroke();
     context.draw()
   },
   toCancel(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: "/pages/cancel/cancel"
     })
    
   },
   backIndex(){
-    wx.navigateBack({
+    wx.redirectTo({
       url:  "/pages/index/index",
     })
   }

@@ -109,7 +109,7 @@ page{
   position: absolute;
   height: 120rpx;
   width: 100%;
-  margin-top: 200rpx;
+  margin-top: -300rpx;
   line-height: 120rpx;
   left: 105rpx;
 }
@@ -158,4 +158,109 @@ page{
   width: 686rpx;
   font-size: 26rpx;
   text-align: center;
+}
+
+.cost-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* height: 100vh; */
+  width: 100%;
+  margin-top: -35rpx;
+  background-color: #f4f6f8;
+}
+.cost-addr{
+  height: 360rpx;
+  width: 100%;
+  /* background: red; */
+ 
+}
+.star-addr{
+  position: absolute;
+  left: 80rpx;
+  top: 120rpx;
+  width: 100%;
+}
+.star-addr::after{
+  content: " ";
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #ccc;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 580rpx;
+    margin-top: -4px;
+}
+
+.end-addr{
+  position: absolute;
+  left: 80rpx;
+  top: 230rpx;
+  width: 100%;
+}
+.end-addr::after{
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 2px 2px 0 0;
+  border-color: #ccc;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 580rpx;
+  margin-top: -4px;
+}
+.cost{
+  background: #fff;
+  width: 100%;
+  border-radius: 5rpx;
+ 
+}
+.cost-title{
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  height: 119rpx;
+  line-height: 119rpx;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 30rpx;
+  color: #666666;
+}
+
+.cost-pic{
+  height: 263rpx;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+  margin-top: 20rpx;
+}
+.carpooling{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  color: #333;
+  opacity: .5;
+  transform: scale(.7)
+}
+.cost-btn{
+  width: 680rpx;
+  height: 100rpx;
+  background-color: #4a4c5b;
+  right: 0;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+}
+.on{
+  opacity: 1;
+  transform: scale(1)
 }

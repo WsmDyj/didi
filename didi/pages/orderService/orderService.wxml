@@ -1,6 +1,6 @@
+<loading hidden="{{hiddenLoading}}">数据加载中</loading>
 <view class="container">
-    
-    <map class="didiMap" latitude="{{latitude}}" 
+    <map class="didiMap" id="didiMap" latitude="{{latitude}}" 
     longitude="{{longitude}}" 
     scale="{{scale}}" 
     bindregionchange="bindregionchange" 
@@ -15,15 +15,15 @@
                 <cover-view class="driver-img">
                     <cover-image style="width: 150rpx;height: 150rpx;"src="../../assets/images/driver.png"/>
                 </cover-view>
-                <cover-view class="driver-detailed">
-                    <cover-view class="detailed-name">邬嗣敏
+                <cover-view class="driver-detailed" >
+                    <cover-view class="detailed-name">{{driver.name}}
                         <cover-image class="star" style="width: 35rpx;height: 35rpx;display: inline-block;" src="../../assets/images/star.png" ></cover-image>
-                        <cover-view class="orderTotal">5.0 1w+单</cover-view>
+                        <cover-view class="orderTotal">{{driver.stars}}</cover-view>
                     </cover-view>
                    
-                    <cover-view class="detailed-Cartnumber">赣A30H75</cover-view>
+                    <cover-view class="detailed-Cartnumber">{{driver.Cartnumber}}</cover-view>
 
-                    <cover-view class="detailed-cart">黑色●宝马Q5</cover-view>
+                    <cover-view class="detailed-cart">{{driver.cart}}</cover-view>
                 </cover-view>
             </cover-view>
             <cover-view class="driver-message">
@@ -47,7 +47,7 @@
     </cover-view>
     <cover-view class="ft">
         <cover-view class="ft-cancel"bindtap="toCancel">取消订单</cover-view>
-        <cover-view class="ft-help" bindtap="toHelp">需要帮助</cover-view>
+        <cover-view class="ft-help" bindtap="toEvaluation">结束行程</cover-view>
         <cover-view class="ft-app" bindtap="toApp">下载滴滴APP</cover-view>
     </cover-view>
 </map>

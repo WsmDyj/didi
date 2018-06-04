@@ -1,7 +1,8 @@
 const util = require('../../utils/util.js')
+const app = getApp()
 Page({
   data: {
-    time: ''
+    time: '',
   },
   toRules(){
     wx.showToast({
@@ -12,7 +13,9 @@ Page({
   },
   onLoad(){
     this.setData({
-      time:util.formatTime(new Date())
+      time:util.formatTime(new Date()),
+      starAddress: app.globalData.bluraddress,
+      eddAddress: app.globalData.destination,
     })
   }
   

@@ -82,6 +82,9 @@ Page({
   controltap: function(e){
   
     console.log(e.controlId)
+    if(e.controlId==1){
+      this.movetoLocation();
+    }
   
   },
   bindregionchange: function(e){
@@ -96,13 +99,12 @@ Page({
           longitude: res.longitude,
       },
       success: function (res) {
-    
+        
         that.setData({
           address: res.result.address,
           bluraddress: res.result.formatted_addresses.recommend
         })
       },
-       
       });
        
       }
@@ -114,21 +116,9 @@ Page({
   },
 toIndex(){
   let  bluraddress = this.data.bluraddress;
-  let address= this.data.address;
- 
-  app.globalData.address=address;
  app.globalData.bluraddress=bluraddress
   wx.redirectTo({
     url: "/pages/index/index",
-    success: function(res){
-      // success
-    },
-    fail: function() {
-      // fail
-    },
-    complete: function() {
-      // complete
-    }
   })
 },
   

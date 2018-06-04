@@ -1,0 +1,51 @@
+ <view class="container">
+  <view class="total">
+        <view class="total-driver">
+            <view class="driver-info">
+                <view class="driver-img">
+                    <image style="width: 150rpx;height: 150rpx;"src="../../assets/images/driver.png"/>
+                </view>
+                <view class="driver-detailed" >
+                    <view class="detailed-name">{{driver.name}}
+                        <image class="star" style="width: 35rpx;height: 35rpx;display: inline-block;" src="../../assets/images/star.png" ></image>
+                        <view class="orderTotal">{{driver.stars}}</view>
+                    </view>
+                   
+                    <view class="detailed-Cartnumber">{{driver.Cartnumber}}</view>
+
+                    <view class="detailed-cart">{{driver.cart}}</view>
+                </view>
+            </view>
+            <view class="driver-message">
+                    <view class="mas">
+                            <image style="width: 70rpx;height: 70rpx;" src="../../assets/images/msm.png"/>
+                        </view>
+                        <view class="phone">
+                            <image style="width: 70rpx;height: 70rpx;" src="../../assets/images/phone.png"/>
+                        </view>
+            </view>
+          
+        </view>
+        <view class="cost">
+            <view class="cost-number"><text style="font-size:32rpx">{{play}}</text>元</view>
+            <view class="cost-desc">
+                <text class="obvious">产看明细 ></text>
+                <text class="invoice">开具发票 ></text>
+            </view>
+        </view>
+        <view class="evaluation">
+            <view class="evaluation-name">匿名评价司机</view>
+                <view class="evaluation-stars" bindtap="myStarChoose">
+                    <block wx:for="{{starMap}}"wx:key="{{index}}">
+                        <text wx:if="{{star>=index+1}}"  class="stars-solid" data-star="{{index+1}}">★</text>
+                        <text wx:if="{{star<index+1}}"  class="stars-empty" data-star="{{index+1}}">☆</text>
+                    </block>
+                </view>
+                <text class="zan-c-gray-dark">{{starMap[star-1]}}</text>
+            </view>
+        </view>
+        <view class="ft">
+            <view class="cancel">需要帮助</view>
+            <view class="notcarpool" bindtap="toIndex">结束行程</view>
+        </view>
+</view>

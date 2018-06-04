@@ -1,7 +1,7 @@
  <view class="container">
     <view class="hd">
         <view class="hd-img"><image src="../../assets/images/remind.png"/></view>
-        <view class="hd-dec">您上车的站点为<text class="hd-dec_address">「江西财经大学」</text></view>
+        <view class="hd-dec">您上车的站点为<text class="hd-dec_address">「{{address}}」</text></view>
     </view>
     <view class="bd">
     <view class="bd_titl">

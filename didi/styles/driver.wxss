@@ -1,0 +1,76 @@
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+  }
+  .total{
+      width: 710rpx;
+      position: absolute;
+      z-index: 99;
+      margin-left: 20rpx;
+      margin-right: 20rpx;
+      margin-top: 20rpx;
+     
+      box-shadow:3px 5px 10px #e0e0e0; 
+      box-sizing: border-box;
+      border: 1px solid #f5f5f5;
+  }
+  .total-driver{
+      width: 100%;
+    height: 190rpx;
+    background: #fff;
+    border-bottom: 1px solid #f5f5f5;
+    box-sizing: border-box;
+  }
+  .driver-info{
+      position: absolute;
+      width: 450rpx;
+      float: left;
+      display: flex;
+      align-items: center;
+      margin-left: 32rpx;
+      margin-top: 20rpx;
+  }
+  .driver-detailed{
+      margin-left: 20rpx;
+  }
+  .detailed-name{
+      color: #333333;
+      font-size: 35rpx;
+      flex: 1;
+  }
+  .detailed-name .orderTotal{
+      position: absolute;
+      display: inline-block;
+      font-size: 26rpx;
+      opacity: .6;
+      margin-left: 5rpx;
+      margin-top: 5rpx;
+  }
+  .detailed-Cartnumber{
+      margin-top: 17rpx;
+     font-size: 30rpx;
+     color: #484848;
+     height: 30rpx;
+     line-height: 30rpx;
+     background-color: #eeeeee;
+     border: 1px solid #cccccc;
+    padding-left: 10rpx;
+  }
+  .detailed-cart{
+      margin-top: 17rpx;
+      font-size: 30rpx;
+      color: #666666;
+  }
+  .driver-message{
+      float: right;
+      display: flex;
+      height: 190rpx;
+      align-items: center;
+      margin-right: 32rpx;
+      text-align: center;
+  }
+  .driver-message .mas{
+      margin-right: 24rpx;
+  }
+  

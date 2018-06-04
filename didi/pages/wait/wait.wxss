@@ -19,7 +19,7 @@
   border-radius: 5rpx;
 }
 .hd .hd-dec{
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 .hd-img image{
   width: 50rpx;
@@ -53,7 +53,7 @@
 }
 .hd-dec_address{
   color: #fc9153;
-  font-size: 36rpx;
+  font-size: 30rpx;
   flex-wrap: wrap;
 }
 .progress_box{

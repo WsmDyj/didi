@@ -18,6 +18,7 @@
     </navigator>
     </view>
     
+<repeat wx:if="{{callCart}}">
     <view class="content">
         <view class="didi-time">{{waitingTimes}}</view>
             <import  src="/templates/sprinner.wxml" />
@@ -31,13 +32,11 @@
              <input type="text" class="didi-input-end" value="{{destination}}"  style="color: #333333" placeholder="你要去哪儿" placeholder-color="#ccccccc" focus="{{false}}"/>
                 </navigator>
             <view class="circle-end"></view>
-        <button class="didi-btn"bindtap="ToWait">呼叫{{cart}}</button>
+        <button class="didi-btn"bindtap="toCast">呼叫{{cart}}</button>
     </view>
-    
-    <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
-       <!-- <swiper-item wx:for="{{[0,1,2,3,4,5,6]}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
-            {{tabItem}}
-        </swiper-item>  -->
+
+    <swiper class="tab-box"  current="{{currentTab}}"  bindchange="switchTab">        
+      
 
         <swiper-item class="tab-express">
             <view class="express-members">
@@ -65,24 +64,92 @@
             </view>
         </swiper-item>
 
+        <swiper-item class="tab-express">
+               <text>后续完善</text>
+        </swiper-item>
+
+        <swiper-item class="tab-express">
+                   <text>后续完善</text>
+        </swiper-item>
+
+        <swiper-item class="tab-express">
+                       <text>后续完善</text>   
+        </swiper-item>
+
+        <swiper-item class="tab-express">
+                     <text>后续完善</text>       
+        </swiper-item>
+
+        <swiper-item class="tab-express">
+                <text>后续完善</text>
+        </swiper-item>
+        <swiper-item class="tab-express">
+                <text>后续完善</text>
+        </swiper-item>
+                                                            
         
-    </swiper>   
-
-
-
+    </swiper>
     <view class="swiper">
     <swiper autoplay="{{true}}" interval="{{interval}}" circular="{{true}}" duration="{{duration}}">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image" />
+    <image src="{{item}}" class="slide-image" />
       </swiper-item>
-    </block>
-  </swiper>
-</view>
+     </block>
+     </swiper>
+    </view>
+    </repeat>
+
+<repeat wx:else>
+    <view class="cost-content">
+            <view class="didi-time costTime">{{waitingTimes}}</view>
+            <import  src="/templates/sprinner.wxml" />
+            <template is="sprinner" data='{{isLoading}}'>
+            </template>
+        <view class="cost-addr">
+            <view class="circle-str"></view>
+            <navigator url= "/pages/starting/starting" redirect > 
+            <view class="star-addr">{{address}}</view>
+            </navigator>
+            <navigator url=  "/pages/destination/destination" redirect >
+            <view class="end-addr">{{destination}}</view>
+            <view class="circle-end"></view>
+            </navigator>
+        </view>
+        <view class="cost">
+            <view class="cost-title">
+                <block wx:for="{{cost}}" wx:key="{{item.id}}">
+                    <view class="cost-item">
+                     <image style="width: 30rpx;height: 30rpx;  display: inline-block; " src="{{item.url}}"/>
+                    {{item.name}}</view>
+                </block>       
+            </view>
+            <view class="cost-pic">
+                    <view class="carpooling  {{index==0?'on':''}}" data-index="0"bindtap="switchCart">
+                        <text class="carpooling-name ">拼车</text>
+                        <image style="width: 150rpx;height: 70rpx;  display: inline-block; " src="../../assets/images/costCart.png"/>
+                        <text class="money" style="font-size: 28rpx;padding-top: 15rpx;">预计<text style="font-size: 40rpx;">{{play1}}</text>元</text>
+                    </view>
+                    <view class="carpooling  {{index==1?'on':''}}"data-index="1" bindtap="switchCart">
+                        <text class="carpooling-name">快车</text>
+                        <image style="width: 150rpx;height: 70rpx;  display: inline-block; " src="../../assets/images/costCart.png"/>
+                        <text class="money" style="font-size: 28rpx;padding-top: 15rpx;">预计<text style="font-size: 40rpx;">{{play2}}</text>元</text>
+                    </view>
+
+                    <view class="carpooling  {{index==2?'on':''}}"data-index="2"bindtap="switchCart">
+                        <text class="carpooling-name">优享</text>
+                        <image style="width: 150rpx;height: 70rpx;  display: inline-block; " src="../../assets/images/goodCart.png"/>
+                        <text class="money" style="font-size: 28rpx;padding-top: 15rpx;">预计<text style="font-size: 40rpx;">{{play3}}</text>元</text>
+                    </view>
+                
+           
+            
+            </view>
+          
+            <button class="cost-btn"bindtap="toWait">呼叫{{cart}}</button>
+        </view>
+    </view>
+</repeat>
 
     <!-- 页面内容 --> 
-    
-    
-   
-  
 </view>

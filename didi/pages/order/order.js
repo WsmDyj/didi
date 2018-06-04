@@ -1,4 +1,4 @@
-// pages/order/order.js
+import util from '../../utils/index';
 Page({
 
   data: {
@@ -32,6 +32,7 @@ Page({
   show: false,
   
   },
+  
   bindReasonChange(e){
     let reasons = this.data.reasons;
     let strVal = e.detail.value;
