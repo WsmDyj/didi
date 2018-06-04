@@ -8,4 +8,4 @@
 滴滴起始位置和终点位置输入完善，拖动地图实时选择位置和渲染页面，目标位置实现关键字搜索和历史查询
 ![测试中](https://github.com/WsmDyj/didi/blob/master/images/START-END.gif)
 ### 功能1：显示首页
-![index](https://user-gold-cdn.xitu.io/2018/6/4/163c8f0d96b1797c))
+![index](https://github.com/WsmDyj/didi/blob/master/images/IMG_2182.PNG)
