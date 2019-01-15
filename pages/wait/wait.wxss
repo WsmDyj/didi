@@ -1,0 +1,120 @@
+.container{
+  background-color: #f4f6f8;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+.hd{
+  width: 710rpx;
+  background-color: #fff;
+  font-size: 28rpx;
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  justify-items: center;
+  margin-top: 20rpx;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow:0 0 10rpx #e3e4e5;
+  border-radius: 5rpx;
+}
+.hd .hd-dec{
+  font-size: 28rpx;
+}
+.hd-img image{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 10rpx;
+  margin-top: 15rpx;
+}
+.bd{
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.bd .bd_titl{
+  color: #666666;
+  margin: 20rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ justify-content: center;
+}
+.bd_titl .titl-maxdesc{
+  padding-bottom: 20rpx;
+  font-size: 40rpx;
+}
+.title-mindesc{
+  display: block;
+  font-size: 30rpx;
+  text-align: center;
+}
+.hd-dec_address{
+  color: #fc9153;
+  font-size: 30rpx;
+  flex-wrap: wrap;
+}
+.progress_box{
+    position: relative;
+    width:220px;
+    height: 220px; 
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .progress_bg{
+    position: absolute;
+    width:220px;
+    height: 220px;
+  }
+  .progress_canvas{
+    width:220px;
+    height: 220px;
+  }
+  .progress_text{
+    position: absolute;
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+    justify-content: center
+  }
+  .progress_info{  
+    font-size: 26rpx;
+    color: #666666;
+    letter-spacing: 2rpx;
+    padding-bottom: 26rpx;
+   
+  }
+  .progress_time{
+    font-size: 55rpx;
+    border-radius:50px;
+    text-align: center;
+    color: #fc9153;
+  }
+  .ft{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 300rpx;
+    width: 710rpx;
+    height: 88rpx;
+    background-color: #fff;
+    box-shadow: 0 0 10rpx #f5f6f7;
+    text-align: center;
+    line-height: 88rpx;
+    color: #666666;
+    bottom: 20rpx;
+    box-shadow:0 0 10rpx #e3e4e5;
+  }
+  .ft .cancel{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+  }
+  .ft .notcarpool{
+    float: right;
+    width: 50%;
+  }

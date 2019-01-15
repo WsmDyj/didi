@@ -1,0 +1,40 @@
+<view class="main">
+    <view class="bd">
+    <view class="total">
+        <view class="total-time">
+            <view class="img">
+                <image src="../../assets/images/clock.png"></image>
+            </view>
+            <text class="time">{{time}}</text>
+        </view>
+        <view class="total-start">
+            <view class="start-pic"></view>
+            <text class="desc">{{starAddress}}</text>
+        </view>
+        <view class="total-end">
+            <view class="end-pic"></view>
+            <text class="desc">{{eddAddress}}</text>
+        </view>
+    </view>
+    <view class="content">
+        <view class="content-img">
+            <image src="../../assets/images/warn.png"/>
+        </view>
+        <view class="content-desc">
+            司机接单后2分钟内免费取消
+        </view>
+        <view class="content-rules" bindtap="toRules">
+            取消规则 >
+        </view>
+    </view>
+    </view>
+
+
+
+    <view class="ft">
+        <view class="cancel" bindtap="toHelp">需要帮助</view>
+        <navigator url= "/pages/index/index" redirect > 
+            <view class="notcarpool" >返回首页</view>
+         </navigator>
+    </view>
+</view>
